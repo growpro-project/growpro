@@ -53,4 +53,8 @@ Most CAD files for the sensors are ready.
 ### InfluxDB
 ![Logo](https://raw.githubusercontent.com/growpro-project/growpro-assets/main/images/screenshots/influx.png)
 
+### Live
+![Logo](https://raw.githubusercontent.com/growpro-project/growpro-assets/main/images/screenshots/live.png)
 
+### VPD
+![Logo](https://raw.githubusercontent.com/growpro-project/growpro-assets/main/images/screenshots/vpd.png)
