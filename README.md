@@ -8,8 +8,10 @@ A plug & play plant monitoring and automation system for Raspberry Pi.
 
 
 An all-in-one Raspberry Pi setup with Node-RED, Docker, InfluxDB, and sensor integration.
-This project was designed to be as simple as possible for people with no prior knowledge of ESPs, Home Assistant, or related systems.
-It runs on a Raspberry Pi 3B+ and newer.
+This project was designed to be as simple as possible for people with no prior knowledge of ESPs, Home Assistant, or YAML configuration.
+It runs on a Raspberry Pi 3B+ or newer and requires only minimal soldering, basic tinkering, and optionally some 3D printing.
+
+The goal: plug & play automation with maximum ease and minimal setup effort.
 
 ## 🚀 Installation Instructions
 
