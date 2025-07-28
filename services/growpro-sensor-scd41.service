@@ -1,0 +1,16 @@
+[Unit]
+Description=GrowPro SCD41 MQTT Sensor Script
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/pi/growpro/venv/bin/python /home/pi/growpro/scripts/sensor_scd41_mqtt.py
+WorkingDirectory=/home/pi/growpro/scripts
+Restart=always
+User=pi
+Environment=PYTHONUNBUFFERED=1
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
