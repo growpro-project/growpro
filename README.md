@@ -1,4 +1,7 @@
-# Nothing here, work in progress
+# This project is under construction. More coming soon.
+A plug & play plant monitoring and automation system for Raspberry Pi.
+
+
 ![Logo](https://raw.githubusercontent.com/growpro-project/growpro-assets/main/images/logo/logo.svg)
 
 
