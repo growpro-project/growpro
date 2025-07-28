@@ -1,4 +1,6 @@
-# growpro
+![Mein SVG](images/logo/logo.svg)
+
+
 
 An all-in-one Raspberry Pi setup with Node-RED, Docker, InfluxDB, and sensor integration.
 
