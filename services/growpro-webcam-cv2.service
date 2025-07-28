@@ -12,42 +12,7 @@ Environment=PYTHONUNBUFFERED=1
 StandardOutput=journal
 StandardError=journal
 
-Nice=15  # CPU-Priorität senken
-
-[Install]
-WantedBy=multi-user.target
-
-
-############################################
-
-
-[Unit]
-Description=GrowPro Flask Webcam Stream
-After=network.target
-
-[Service]
-Type=simple
-User=pi
-WorkingDirectory=/home/pi/growpro/scripts
-
-# Python venv aktivieren & Script starten
-ExecStart=/home/pi/growpro/venv/bin/python /home/pi/growpro/scripts/webcam_cv2_stream.py
-
-# Neustart bei Fehler
-Restart=always
-RestartSec=5
-
-# CPU & IO-Priorität senken
 Nice=15
-IOSchedulingClass=idle
-
-# Umweltvariablen
-Environment=PYTHONUNBUFFERED=1
-
-# Standard-Logs ins Journal
-StandardOutput=journal
-StandardError=journal
 
 [Install]
 WantedBy=multi-user.target
-
