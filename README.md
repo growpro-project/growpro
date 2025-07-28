@@ -35,3 +35,15 @@ Set up MQTT (Mosquitto) and systemd services
 Configure the I²C interface
 
 Set the hostname to growpro
+
+## Screenshots so far
+### Dashboard
+![Logo](https://raw.githubusercontent.com/growpro-project/growpro-assets/main/images/screenshots/dashboard.png)
+
+### Settings
+![Logo](https://raw.githubusercontent.com/growpro-project/growpro-assets/main/images/screenshots/settings.png)
+
+### InfluxDB
+![Logo](https://raw.githubusercontent.com/growpro-project/growpro-assets/main/images/screenshots/influx.png)
+
+
