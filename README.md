@@ -1,4 +1,5 @@
-![Mein SVG](images/logo/logo.svg)
+![Logo](https://raw.githubusercontent.com/growpro-project/growpro-assets/main/images/logo/logo.svg)
+
 
 
 
