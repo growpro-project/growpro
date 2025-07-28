@@ -9,7 +9,7 @@ node_modules/
 # Environment files
 .env
 
-# macOS Systemdateien
+# macOS
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -21,8 +21,11 @@ node_modules/
 .Spotlight-V100
 .Trashes
 
-# Weitere macOS temporäre Dateien
+# macOS
 .DS_Store?
 ._*
 .Spotlight-V100
 .Trashes
+
+# Images
+images/
