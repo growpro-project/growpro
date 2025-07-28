@@ -5,6 +5,8 @@
 
 
 An all-in-one Raspberry Pi setup with Node-RED, Docker, InfluxDB, and sensor integration.
+This project was designed to be as simple as possible for people with no prior knowledge of ESPs, Home Assistant, or related systems.
+It runs on a Raspberry Pi 3B+ and newer.
 
 ## 🚀 Installation Instructions
 
@@ -32,11 +34,16 @@ Install and run InfluxDB via Docker
 
 Set up MQTT (Mosquitto) and systemd services
 
-Configure the I²C interface
+### Funktions so far
 
-Set the hostname to growpro
+- Email Alerts
+- Live cam and timelaps recordings
+- VPD Graph
+- PID and Bang Bang
 
-## Screenshots so far
+Most CAD files for the sensors are ready.
+
+## 📷 Sneak peek screenshots – more to come!
 ### Dashboard
 ![Logo](https://raw.githubusercontent.com/growpro-project/growpro-assets/main/images/screenshots/dashboard.png)
 
