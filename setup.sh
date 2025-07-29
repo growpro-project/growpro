@@ -62,11 +62,7 @@ echo "📡 Configuring Mosquitto..."
 echo -e "listener 1883\nallow_anonymous true" | sudo tee /etc/mosquitto/mosquitto.conf > /dev/null
 sudo systemctl restart mosquitto
 
-# --- [9] Create project directories ---
-echo "📁 Creating project directories..."
-mkdir -p /home/pi/growpro/{scripts,services}
-
-# --- [10] Setup Python virtual environment and install dependencies ---
+# --- [9] Setup Python virtual environment and install dependencies ---
 echo "🐍 Creating Python virtual environment..."
 python3 -m venv /home/pi/growpro/venv
 source /home/pi/growpro/venv/bin/activate
@@ -74,18 +70,18 @@ pip install --upgrade pip
 pip install -r /home/pi/growpro/requirements.txt
 deactivate
 
-# --- [11] Enable systemd services ---
+# --- [10] Enable systemd services ---
 echo "🛠 Enabling systemd services..."
 for service in /home/pi/growpro/services/*.service; do
     sudo cp "$service" /etc/systemd/system/
     sudo systemctl enable --now "$(basename "$service")"
 done
 
-# --- [12] Enable I2C interface ---
+# --- [11] Enable I2C interface ---
 echo "🔌 Enabling I2C interface..."
 sudo raspi-config nonint do_i2c 0
 
-# --- [13] Set hostname ---
+# --- [12] Set hostname ---
 echo "📛 Setting hostname..."
 sudo hostnamectl set-hostname growpro
 sudo sed -i 's/127.0.1.1.*/127.0.1.1\tgrowpro/' /etc/hosts
