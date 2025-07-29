@@ -1,52 +1,15 @@
 #  cd /home/pi/growpro/scripts
 # python3 mlx_set_emissivity.py
 
-
-# ⚠️ Emissivität setzen (EEPROM schreiben)
-
-# import time
-# from smbus2 import SMBus
-
-# I2C_ADDR = 0x5A
-# REG_EMISS = 0x24
-
-# def write_emissivity(emissivity, bus_num=1):
-#     assert 0.1 <= emissivity <= 1.0, "Emissivität muss zwischen 0.1 und 1.0 liegen"
-#     raw = int(emissivity * 65535) & 0xFFFF
-#     low = raw & 0xFF
-#     high = (raw >> 8) & 0xFF
-
-#     with SMBus(bus_num) as bus:
-#         # Schritt 1: Auf 0 setzen
-#         bus.write_word_data(I2C_ADDR, REG_EMISS, 0x0000)
-#         time.sleep(0.01)
-
-#         # Schritt 2: Neuer Wert schreiben
-#         bus.write_word_data(I2C_ADDR, REG_EMISS, raw)
-#         time.sleep(0.01)
-
-#         print(f"Neue Emissivität gesetzt: {emissivity:.4f} (0x{raw:04X})")
-
-# # Beispiel: Emissivität auf 0.95 setzen
-# write_emissivity(0.95)
-
-
 ###################################################################################################################
 
 
-# read_emissivity.py
+# ⚠️ Set Emissivity
 # python3 mlx_set_emissivity.py 0.95
 
 # msg.payload = "/usr/bin/python3 /home/pi/set_emissivity.py " + msg.payload;
 # return msg;
 
-# Lesen der aktuellen Emissivität
-
-# Sicheres Schreiben mit PEC (Packet Error Checking) nach SMBus-Standard
-
-# Verifikation nach dem Schreiben
-
-# ⚠️ Emissivität setzen (EEPROM schreiben)
 
 import time
 from smbus2 import SMBus, i2c_msg
