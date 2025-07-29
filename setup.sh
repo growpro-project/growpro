@@ -8,7 +8,8 @@ echo "📦 Installing system packages..."
 sudo apt update && sudo apt install -y \
     samba samba-common-bin \
     mosquitto mosquitto-clients \
-    ffmpeg
+    ffmpeg \
+    python3-venv python3-full
 
 # --- [2] Configure Samba (optional) ---
 echo "🗂 Configuring Samba..."
