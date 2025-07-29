@@ -38,8 +38,10 @@ echo "🔁 Enabling and restarting Node-RED service..."
 sudo systemctl enable nodered.service
 sudo systemctl restart nodered.service
 
-# --- [6] Enable Docker service ---
-echo "🐳 Enabling Docker..."
+# --- [6] Install Docker ---
+echo "🐳 Installing Docker..."
+curl -sSL https://get.docker.com | sh
+sudo usermod -aG docker pi
 sudo systemctl enable --now docker
 
 # --- [7] Start InfluxDB Docker container ---
@@ -60,6 +62,7 @@ docker run -d \
 # --- [8] Configure Mosquitto MQTT broker ---
 echo "📡 Configuring Mosquitto..."
 echo -e "listener 1883\nallow_anonymous true" | sudo tee /etc/mosquitto/mosquitto.conf > /dev/null
+sudo systemctl enable mosquitto
 sudo systemctl restart mosquitto
 
 # --- [9] Setup Python virtual environment and install dependencies ---
@@ -101,3 +104,6 @@ fi
 sudo sysctl -p
 
 echo "✅ GrowPro Setup complete."
+
+echo "🔄 System is now restarting to apply all changes..."
+sudo reboot
