@@ -1,9 +1,6 @@
 #  cd /home/pi/growpro/scripts
 # python3 mlx_read_emissivity.py
 
-
-# ✅ Emissivität auslesen
-
 # from smbus2 import SMBus
 
 # I2C_ADDR = 0x5A
