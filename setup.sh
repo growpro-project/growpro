@@ -6,9 +6,9 @@ echo "🚀 Starting GrowPro Setup..."
 # --- [1] Install system packages ---
 echo "📦 Installing system packages..."
 sudo apt update && sudo apt install -y \
-    python3-full python3-venv git docker.io docker-compose \
-    samba samba-common-bin mosquitto \
-    flask opencv-python curl build-essential ffmpeg
+    samba samba-common-bin \
+    mosquitto mosquitto-clients \
+    ffmpeg
 
 # --- [2] Configure Samba (optional) ---
 echo "🗂 Configuring Samba..."
