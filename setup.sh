@@ -46,7 +46,7 @@ sudo systemctl enable --now docker
 
 # --- [7] Start InfluxDB Docker container ---
 echo "📦 Starting InfluxDB Docker container..."
-docker run -d \
+sudo docker run -d \
   --name=influxdb2 \
   --restart unless-stopped \
   -p 8086:8086 \
