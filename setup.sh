@@ -91,4 +91,13 @@ echo "📛 Setting hostname..."
 sudo hostnamectl set-hostname growpro
 sudo sed -i 's/127.0.1.1.*/127.0.1.1\tgrowpro/' /etc/hosts
 
+# --- [14] Auto-reboot on kernel panic ---
+echo "🛡 Enabling auto-reboot on kernel panic..."
+if ! grep -q "kernel.panic" /etc/sysctl.conf; then
+    echo "kernel.panic = 10" | sudo tee -a /etc/sysctl.conf
+else
+    sudo sed -i 's/^kernel\.panic.*/kernel.panic = 10/' /etc/sysctl.conf
+fi
+sudo sysctl -p
+
 echo "✅ GrowPro Setup complete."
