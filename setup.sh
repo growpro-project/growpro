@@ -34,7 +34,6 @@ if ! grep -q "^\[growpro\]" /etc/samba/smb.conf; then
 else
     echo "ℹ️ Samba share [growpro] already exists. Skipping."
 fi
-
 # Enable and restart Samba service
 sudo systemctl enable smbd
 sudo systemctl restart smbd
@@ -43,22 +42,16 @@ sudo systemctl restart smbd
 # --- [3] Install Node-RED and Node.js ---
 echo "🧱 Installing Node-RED and Node.js..."
 bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered) --no-init
-
-
 # --- [4] Copy Node-RED configuration ---
 echo "⚙️ Copying Node-RED configuration..."
 sudo systemctl stop nodered
-
 # Copy main config files
 cp /home/pi/growpro/nodered/settings.js ~/.node-red/
 cp /home/pi/growpro/nodered/flows*.json ~/.node-red/
 cp /home/pi/growpro/nodered/package*.json ~/.node-red/
 cp /home/pi/growpro/nodered/package-lock*.json ~/.node-red/
-
 cd ~/.node-red
 npm install
-
-
 # --- [5] Start Node-RED ---
 echo "🔁 Enabling and restarting Node-RED service..."
 sudo systemctl enable nodered.service
