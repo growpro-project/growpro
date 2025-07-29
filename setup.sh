@@ -4,9 +4,10 @@ set -e  # Exit script on any error
 echo "🚀 Starting GrowPro Setup..."
 
 
-# --- [1] Install system packages ---
-echo "📦 Installing system packages..."
-sudo apt update && sudo apt install -y \
+# --- [1] Update system and install packages ---
+echo "📦 Updating system and installing packages..."
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y \
     samba samba-common-bin \
     mosquitto mosquitto-clients \
     ffmpeg \
@@ -151,3 +152,5 @@ case "${answer,,}" in
         echo "❌ Reboot cancelled. Please reboot manually later."
         ;;
 esac
+
+
