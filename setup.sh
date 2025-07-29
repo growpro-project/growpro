@@ -11,11 +11,34 @@ sudo apt update && sudo apt install -y \
     ffmpeg \
     python3-venv python3-full
 
-# --- [2] Configure Samba (optional) ---
+# --- [2] Configure Samba ---
 echo "🗂 Configuring Samba..."
+
+# Add Samba password for user 'pi'
 echo -e "growpro\ngrowpro" | sudo smbpasswd -a pi || true
+
+# Ensure correct ownership
+sudo chown -R pi:pi /home/pi/growpro
+
+# Add Samba share for the entire growpro directory
+if ! grep -q "^\[growpro\]" /etc/samba/smb.conf; then
+    echo "📁 Adding Samba share for /home/pi/growpro..."
+    echo -e "\n[growpro]
+   path = /home/pi/growpro
+   writeable = yes
+   browseable = yes
+   guest ok = no
+   create mask = 0644
+   directory mask = 0755
+   force user = pi" | sudo tee -a /etc/samba/smb.conf > /dev/null
+else
+    echo "ℹ️ Samba share [growpro] already exists. Skipping."
+fi
+
+# Enable and restart Samba service
 sudo systemctl enable smbd
 sudo systemctl restart smbd
+
 
 # --- [3] Install Node-RED and Node.js ---
 echo "🧱 Installing Node-RED and Node.js..."
