@@ -81,7 +81,12 @@ done
 echo "🔌 Enabling I2C interface..."
 sudo raspi-config nonint do_i2c 0
 
-# --- [12] Set hostname ---
+# --- [12] Enable pigpiod daemon ---
+echo "📡 Enabling pigpiod GPIO daemon..."
+sudo systemctl enable pigpiod
+sudo systemctl start pigpiod
+
+# --- [13] Set hostname ---
 echo "📛 Setting hostname..."
 sudo hostnamectl set-hostname growpro
 sudo sed -i 's/127.0.1.1.*/127.0.1.1\tgrowpro/' /etc/hosts
