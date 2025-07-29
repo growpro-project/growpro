@@ -103,7 +103,16 @@ else
 fi
 sudo sysctl -p
 
+# --- [15] Ready and reboot ---
 echo "✅ GrowPro Setup complete."
 
-echo "🔄 System is now restarting to apply all changes..."
-sudo reboot
+read -p "🔄 System is now ready. Do you want to reboot now? [Y/n]: " answer
+case "${answer,,}" in
+    y|yes|"") 
+        echo "🔁 Rebooting now..."
+        sudo reboot
+        ;;
+    *)
+        echo "❌ Reboot cancelled. Please reboot manually later."
+        ;;
+esac
