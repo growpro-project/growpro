@@ -1,8 +1,3 @@
-#  cd /home/pi/growpro/scripts
-
-# msg.payload = "python3 /home/pi/growpro/scripts/mlx_emissivity.py --set " + msg.payload;
-# return msg;
-
 # ✅ Emissivität nur auslesen:
 
 # python3 mlx_emissivity.py --read
@@ -11,12 +6,9 @@
 
 # python3 mlx_emissivity.py --set 0.98 --simulate
 
-# ✅ Nur wenn du bereit bist, wirklich zu schreiben (nicht simulieren):
+# ✅ Emissivität schreiben:
 
 # python3 mlx_emissivity.py --set 0.95
-
-
-# ⚠️ Emissivität setzen (EEPROM schreiben)
 
 
 import time
