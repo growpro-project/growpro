@@ -138,6 +138,12 @@ sudo sysctl -p
 # --- [15] Ready and reboot ---
 echo "✅ GrowPro Setup complete."
 
+# Show system access info
+IP=$(hostname -I | awk '{print $1}')
+HOSTNAME=$(hostname)
+echo "📡 Hostname: $HOSTNAME"
+echo "🌐 IP Address: $IP"
+
 read -p "🔄 System is now ready. Do you want to reboot now? [Y/n]: " answer
 case "${answer,,}" in
     y|yes|"") 
