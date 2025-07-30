@@ -120,7 +120,7 @@ sudo systemctl start pigpiod
 
 
 # --- [13] Set hostname ---
-echo "📛 Setting hostname..."
+echo "📛 Setting hostname to growpro..."
 sudo hostnamectl set-hostname growpro
 sudo sed -i 's/127.0.1.1.*/127.0.1.1\tgrowpro/' /etc/hosts
 
