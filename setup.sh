@@ -14,7 +14,8 @@ sudo apt install -y \
     mosquitto mosquitto-clients \
     ffmpeg \
     python3-venv python3-full
-
+    
+echo "☑️  Done..."
 
 # --- [2] Configure Samba ---
 echo "🗂 Configuring Samba..."
