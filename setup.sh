@@ -139,20 +139,26 @@ sudo sysctl -p
 echo "✅ GrowPro Setup complete."
 
 # Show system access info
-IP=$(hostname -I | awk '{print $1}')
 HOSTNAME=$(hostname)
-echo "📡 Hostname: $HOSTNAME"
-echo "🌐 IP Address: $IP"
+IP=$(ip -4 addr show wlan0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}' || ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
 
-read -p "🔄 System is now ready. Do you want to reboot now? [Y/n]: " answer
+echo ""
+echo "📡 Hostname:  $HOSTNAME"
+echo "🌐 IP Address: $IP"
+echo "🔲 GrowPro: http://$HOSTNAME:1880/dashboard/home"
+echo "🔲 GrowPro (via IP): http://$IP:1880/dashboard/home"
+echo ""
+
+read -p "🔄 Setup is complete. A reboot is strongly recommended to apply all changes. Reboot now? [Y/n]: " answer
 case "${answer,,}" in
-    y|yes|"") 
+    y|yes|"")
         echo "🔁 Rebooting now..."
         sudo reboot
         ;;
     *)
-        echo "❌ Reboot cancelled. Please reboot manually later."
+        echo "⚠️ Reboot skipped. Please reboot manually later to ensure everything works properly."
         ;;
 esac
+
 
 
