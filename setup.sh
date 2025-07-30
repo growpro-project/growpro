@@ -45,6 +45,7 @@ sudo systemctl restart smbd
 # --- [3] Install Node-RED and Node.js ---
 echo "🧱 Installing Node-RED and Node.js..."
 bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered) --no-init
+#bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered) --no-init --nodered-user=pi
 # --- [4] Copy Node-RED configuration ---
 echo "⚙️ Copying Node-RED configuration..."
 sudo systemctl stop nodered
