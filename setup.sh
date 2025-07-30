@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e  # Exit script on any error
 
+cat /home/pi/growpro/assets/growpro-ascii.txt
+
 echo "🚀 Starting GrowPro Setup..."
 
 
