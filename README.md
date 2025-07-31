@@ -46,7 +46,7 @@ Set up MQTT (Mosquitto) and systemd services
 - VPD Graph
 - PID and Bang Bang
 
-Most CAD files for the sensors are ready.
+
 
 ## 📷 Sneak peek screenshots – more to come!
 ### Dashboard
